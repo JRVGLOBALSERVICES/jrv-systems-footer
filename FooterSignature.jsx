@@ -79,7 +79,7 @@ const FooterSignature = ({
               alt="JRV Systems"
               width="80"
               height="80"
-              className="h-20 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+              className="h-16 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
             />
           </GlitchText>
         </a>
