@@ -67,7 +67,7 @@ const FooterSignature = ({
           href="https://jrvsystems.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-3 font-mono font-bold text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
+          className="group font-mono font-bold text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
         >
           <GlitchText className="flex items-center gap-3">
             <div className="flex flex-col items-end">
@@ -79,7 +79,7 @@ const FooterSignature = ({
               alt="JRV Systems"
               width="80"
               height="80"
-              className="h-20 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all jrv-glitch-img"
+              className="h-20 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
             />
           </GlitchText>
         </a>
