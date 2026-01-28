@@ -37,13 +37,16 @@ const FooterSignature = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className={`pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left bg-transparent ${className}`}>
-      <div className="font-mono text-sm text-slate-200 uppercase tracking-widest">
-        © {currentYear} {companyName}. {companyTagline}
+    <div className={`pt-8 border-t border-slate-900 flex flex-col text-center md:text-left gap-6 bg-transparent ${className}`}>
+      {/* Row 1 - Left Aligned */}
+      <div className="flex flex-col md:flex-row md:justify-start justify-center items-center gap-6">
+        <div className="font-mono font-bold text-sm text-slate-200 uppercase tracking-widest">
+          © {currentYear} {companyName}. {companyTagline}
+        </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-        {/* Legal Links */}
+      {/* Row 2 - Center Aligned */}
+      <div className="flex flex-col md:flex-row md:justify-center justify-center items-center gap-6">
         {legalPages && legalPages.length > 0 && (
           <div className="flex gap-6 justify-center">
             {legalPages.map((item) => (
@@ -51,35 +54,40 @@ const FooterSignature = ({
                 key={item.label}
                 to={item.path}
                 href={item.path}
-                className={`font-mono text-sm text-slate-200 hover:text-${accentColor} uppercase tracking-widest transition-colors`}
+                className={`font-mono font-bold text-sm text-slate-200 hover:text-${accentColor} uppercase tracking-widest transition-colors`}
               >
                 [{item.label}]
               </LinkComponent>
             ))}
           </div>
         )}
+      </div>
 
+      {/* Row 3 - Right Aligned */}
+      <div className="flex flex-col md:flex-row md:justify-end justify-center items-center gap-3">
         {/* JRV Systems Branding - Fixed */}
         <a
           href="https://jrvsystems.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-3 font-mono text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
+          className="group flex items-center gap-3 font-mono font-bold text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
         >
           <GlitchText className="flex items-center gap-3">
             <div className="flex flex-col items-end">
               <span>Dev_By:</span>
-              <span className={`text-${accentColor} font-bold`}>
+              <span className={`text-${accentColor}`}>
                 JRV_SYSTEMS
               </span>
             </div>
-            <img
-              src={logoUrl}
-              alt="JRV Systems"
-              width="80"
-              height="80"
-              className="h-20 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
-            />
+            <GlitchText>
+              <img
+                src={logoUrl}
+                alt="JRV Systems"
+                width="80"
+                height="80"
+                className="h-20 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+              />
+            </GlitchText>
           </GlitchText>
         </a>
       </div>
