@@ -1,0 +1,88 @@
+/* JRV Footer Styles — minimalistic, dark theme */
+
+.jrv-footer {
+  background: #02071b;
+  color: #eff6ff;
+  padding: 3rem 1rem 1rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.jrv-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jrv-footer__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.jrv-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jrv-footer__logo {
+  width: 32px;
+  height: 32px;
+  background: #f15828;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(241, 88, 40, 0.4);
+}
+
+.jrv-footer__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.jrv-footer__tagline {
+  color: #8999af;
+  margin: 0;
+}
+
+.jrv-footer__section {
+}
+
+.jrv-footer__heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.jrv-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jrv-footer__list a {
+  color: #8999af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.jrv-footer__list a:hover {
+  color: #f6bbc1;
+}
+
+.jrv-footer__bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  color: #8999af;
+  font-size: 0.75rem;
+}
+
+.jrv-footer__bottom p {
+  margin: 0;
+}

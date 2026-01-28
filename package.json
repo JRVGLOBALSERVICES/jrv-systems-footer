@@ -1,0 +1,27 @@
+{
+  "name": "@jrv/footer",
+  "version": "1.0.0",
+  "description": "Reusable JRV Systems footer components for all JRV sites",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./signature": "./FooterSignature.jsx",
+    "./footer.css": "./footer.css",
+    "./signature.css": "./footer-signature.css"
+  },
+  "scripts": {
+    "build": "echo 'No build required - JSX files are ready to use'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": ["jrv", "footer", "react", "next", "component", "signature"],
+  "author": "JRV Systems",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/jrv-systems-footer.git"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}
