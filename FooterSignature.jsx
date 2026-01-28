@@ -77,9 +77,9 @@ const FooterSignature = ({
             <img
               src={logoUrl}
               alt="JRV Systems"
-              width="80"
-              height="80"
-              className="h-16 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+              width="48"
+              height="48"
+              className="h-12 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
             />
           </GlitchText>
         </a>
