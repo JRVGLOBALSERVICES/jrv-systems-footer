@@ -1,23 +1,4 @@
-import React from "react";
-
-export default function JRVFooter({ className = "" }) {
-  const year = new Date().getFullYear();
-
-  return (
-    <footer className={`jrv-footer ${className}`}>
-      <div className="jrv-footer__container">
-        <div className="jrv-footer__grid">
-          {/* Brand */}
-          <div className="jrv-footer__brand">
-            <div className="jrv-footer__logo" />
-            <h3 className="jrv-footer__title">JRV Systems</h3>
-            <p className="jrv-footer__tagline">Engineering smart systems built to scale.</p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="jrv-footer__section">
-            <h4 className="jrv-footer__heading">Quick Links</h4>
-            <ul className="jrv-footer__list">
+export { default as FooterSignature, GlitchText } from "./FooterSignature.jsx";
               <li><a href="https://jrvsystems.app/">Portfolio</a></li>
               <li><a href="https://jrvsystems.app/#work">Work</a></li>
               <li><a href="https://jrvsystems.app/#services">Services</a></li>

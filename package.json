@@ -13,8 +13,10 @@
   ],
   "exports": {
     ".": "./index.js",
-    "./signature": "./FooterSignature.jsx",
-    "./footer.css": "./footer.css",
+    "./signature": {
+      "import": "./FooterSignature.jsx",
+      "require": "./FooterSignature.jsx"
+    },
     "./signature.css": "./footer-signature.css"
   },
   "scripts": {
