@@ -3,8 +3,8 @@ import React from "react";
 /**
  * GlitchText Component - Creates a glitch effect on hover
  */
-const GlitchText = ({ children, className = "" }) => {
-  return <span className={`jrv-glitch ${className}`}>{children}</span>;
+const GlitchText = ({ children, style = {} }) => {
+  return <span className="jrv-glitch" style={style}>{children}</span>;
 };
 
 /**
@@ -15,7 +15,7 @@ const GlitchText = ({ children, className = "" }) => {
  * @param {string} companyTagline - Optional tagline after company name
  * @param {Array} legalPages - Array of legal page links { label, path }
  * @param {Component} LinkComponent - React Router Link component or 'a' tag
- * @param {string} accentColor - Accent color class (default: "green")
+ * @param {string} accentColor - Hex color code (default: "#22c55e")
  * @param {string} logoUrl - Custom logo URL (optional)
  */
 const FooterSignature = ({
@@ -26,60 +26,98 @@ const FooterSignature = ({
     { label: "Cookies", path: "/cookies-policy" },
   ],
   LinkComponent = "a",
-  accentColor = "green",
+  accentColor = "#22c55e",
   logoUrl = "https://res.cloudinary.com/de3gn7o77/image/upload/v1769591082/logo.png",
-  className = "",
+  style = {},
 }) => {
   const currentYear = new Date().getFullYear();
 
+  const containerStyle = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '1.5rem',
+    alignItems: 'center',
+    ...style
+  };
+
+  const linkBaseStyle = {
+    fontFamily: 'monospace',
+    fontWeight: 'bold',
+    fontSize: '0.75rem',
+    color: '#e2e8f0',
+    textTransform: 'uppercase',
+    letterSpacing: '0.1em',
+    textDecoration: 'none',
+    whiteSpace: 'nowrap'
+  };
+
   return (
-    <div
-      className={`pt-8 border-t border-slate-900 flex flex-col md:flex-row md:items-center gap-6 text-center md:text-left bg-transparent ${className}`}
-    >
+    <div style={containerStyle}>
       {/* Column 1 - Left Aligned (Copyright) */}
-      <div className="flex-1 flex justify-center md:justify-start items-center">
-        <div className="font-mono font-bold text-sm text-slate-200 uppercase tracking-widest">
+      <div style={{ textAlign: 'center' }}>
+        <div style={{
+          fontFamily: 'monospace',
+          fontWeight: 'bold',
+          fontSize: '0.875rem',
+          color: '#e2e8f0',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em'
+        }}>
           © {currentYear} {companyName}. {companyTagline}
         </div>
       </div>
 
       {/* Column 2 - Center Aligned (Legal Links) */}
-      <div className="flex-1 flex justify-center items-center">
-        {legalPages && legalPages.length > 0 && (
-          <div className="flex gap-6 justify-center">
-            {legalPages.map((item) => (
-              <LinkComponent
-                key={item.label}
-                to={item.path}
-                href={item.path}
-                className={`font-mono font-bold text-sm text-slate-200 hover:text-${accentColor} uppercase tracking-widest transition-colors`}
-              >
-                [{item.label}]
-              </LinkComponent>
-            ))}
-          </div>
-        )}
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '0.75rem',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        {legalPages && legalPages.length > 0 && legalPages.map((item) => (
+          <LinkComponent
+            key={item.label}
+            to={item.path}
+            href={item.path}
+            style={linkBaseStyle}
+            onMouseEnter={(e) => e.currentTarget.style.color = accentColor}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#e2e8f0'}
+          >
+            [{item.label}]
+          </LinkComponent>
+        ))}
       </div>
 
       {/* Column 3 - Right Aligned (JRV Systems Branding) */}
-      <div className="flex-1 flex justify-center md:justify-end items-center">
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <a
           href="https://jrvsystems.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group font-mono font-bold text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
+          style={{
+            fontFamily: 'monospace',
+            fontWeight: 'bold',
+            fontSize: '0.875rem',
+            color: '#e2e8f0',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            textDecoration: 'none'
+          }}
         >
-          <GlitchText className="flex items-center gap-3">
-            <div className="flex flex-col items-end">
-              <span>Dev_By:</span>
-              <span className={`text-${accentColor}`}>JRV_SYSTEMS</span>
+          <GlitchText style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+              <span style={{ fontSize: '0.75rem' }}>DEV_BY:</span>
+              <span style={{ fontSize: '0.75rem', color: accentColor }}>JRV_SYSTEMS</span>
             </div>
             <img
               src={logoUrl}
               alt="JRV Systems"
               width="48"
               height="48"
-              className="h-12 w-auto md:opacity-50 md:grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+              style={{ height: '3rem', width: 'auto', opacity: 0.5, filter: 'grayscale(100%)' }}
+              onMouseEnter={(e) => { e.target.style.opacity = '1'; e.target.style.filter = 'grayscale(0%)'; }}
+              onMouseLeave={(e) => { e.target.style.opacity = '0.5'; e.target.style.filter = 'grayscale(100%)'; }}
             />
           </GlitchText>
         </a>

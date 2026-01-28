@@ -1,6 +1,6 @@
 {
   "name": "jrv-systems-footer",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Reusable JRV Systems footer components for all JRV sites",
   "main": "index.js",
   "type": "module",
