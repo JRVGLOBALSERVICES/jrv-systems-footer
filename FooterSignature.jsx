@@ -34,17 +34,17 @@ const FooterSignature = ({
 
   return (
     <div
-      className={`pt-8 border-t border-slate-900 flex flex-col md:flex-row md:justify-between md:items-center gap-6 text-center md:text-left bg-transparent ${className}`}
+      className={`pt-8 border-t border-slate-900 flex flex-col md:flex-row md:items-center gap-6 text-center md:text-left bg-transparent ${className}`}
     >
       {/* Column 1 - Left Aligned (Copyright) */}
-      <div className="flex justify-center md:justify-start items-center">
+      <div className="flex-1 flex justify-center md:justify-start items-center">
         <div className="font-mono font-bold text-sm text-slate-200 uppercase tracking-widest">
           © {currentYear} {companyName}. {companyTagline}
         </div>
       </div>
 
       {/* Column 2 - Center Aligned (Legal Links) */}
-      <div className="flex justify-center items-center">
+      <div className="flex-1 flex justify-center items-center">
         {legalPages && legalPages.length > 0 && (
           <div className="flex gap-6 justify-center">
             {legalPages.map((item) => (
@@ -62,7 +62,7 @@ const FooterSignature = ({
       </div>
 
       {/* Column 3 - Right Aligned (JRV Systems Branding) */}
-      <div className="flex justify-center md:justify-end items-center">
+      <div className="flex-1 flex justify-center md:justify-end items-center">
         <a
           href="https://jrvsystems.app"
           target="_blank"
