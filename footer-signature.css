@@ -47,6 +47,50 @@
   }
 }
 
+/* Glitch effect for images */
+.jrv-glitch-img {
+  animation: jrv-glitch-img-continuous 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.jrv-glitch-img:hover {
+  animation: none;
+}
+
+@keyframes jrv-glitch-img-continuous {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: translateX(0);
+  }
+  15% {
+    filter: hue-rotate(90deg) saturate(3);
+    transform: translateX(-2px);
+  }
+  30% {
+    filter: hue-rotate(180deg) saturate(2);
+    transform: translateX(2px) scaleX(0.98);
+  }
+  45% {
+    filter: hue-rotate(270deg) saturate(3);
+    transform: translateX(-1px) scaleX(1.02);
+  }
+  60% {
+    filter: hue-rotate(360deg) saturate(2);
+    transform: translateX(1px);
+  }
+  75% {
+    filter: hue-rotate(90deg) saturate(3);
+    transform: translateX(-1px);
+  }
+  90% {
+    filter: hue-rotate(0deg) saturate(1.5);
+    transform: translateX(1px);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    transform: translateX(0);
+  }
+}
+
 /* Utility classes for non-Tailwind projects */
 .font-display {
   font-family: 'Courier New', Courier, monospace;
