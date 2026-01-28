@@ -5,7 +5,7 @@ import React from "react";
  */
 const GlitchText = ({ children, className = "" }) => {
   return (
-    <span className={`jrv-glitch ${className}`} data-text={typeof children === 'string' ? children : ''}>
+    <span className={`jrv-glitch ${className}`}>
       {children}
     </span>
   );
@@ -38,20 +38,20 @@ const FooterSignature = ({
 
   return (
     <div className={`pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left bg-transparent ${className}`}>
-      <div className="font-display text-sm text-slate-200 uppercase tracking-widest">
+      <div className="font-mono text-sm text-slate-200 uppercase tracking-widest">
         © {currentYear} {companyName}. {companyTagline}
       </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
         {/* Legal Links */}
         {legalPages && legalPages.length > 0 && (
-          <div className="flex gap-6">
+          <div className="flex gap-6 justify-center">
             {legalPages.map((item) => (
               <LinkComponent
                 key={item.label}
                 to={item.path}
                 href={item.path}
-                className={`font-display text-sm text-slate-200 hover:text-${accentColor} uppercase tracking-widest transition-colors`}
+                className={`font-mono text-sm text-slate-200 hover:text-${accentColor} uppercase tracking-widest transition-colors`}
               >
                 [{item.label}]
               </LinkComponent>
@@ -64,7 +64,7 @@ const FooterSignature = ({
           href="https://jrvsystems.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-3 font-display text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
+          className="group flex items-center gap-3 font-mono text-sm text-slate-200 hover:text-white transition-colors uppercase tracking-widest"
         >
           <GlitchText className="flex items-center gap-3">
             <div className="flex flex-col items-end">

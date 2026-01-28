@@ -4,82 +4,46 @@
 .jrv-glitch {
   position: relative;
   display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  animation: jrv-glitch-continuous 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
-.jrv-glitch:hover::before,
-.jrv-glitch:hover::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
+.jrv-glitch:hover {
+  animation: none;
 }
 
-.jrv-glitch:hover::before {
-  animation: jrv-glitch-anim-1 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #00ff00;
-  z-index: -1;
-}
-
-.jrv-glitch:hover::after {
-  animation: jrv-glitch-anim-2 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-  color: #ff00ff;
-  z-index: -2;
-}
-
-@keyframes jrv-glitch-anim-1 {
+@keyframes jrv-glitch-continuous {
   0% {
-    clip-path: inset(50% 0 25% 0);
-    transform: translate(-2px, 2px);
+    text-shadow: 0 0 0 rgba(0, 255, 0, 0);
+    transform: translateX(0);
   }
-  20% {
-    clip-path: inset(25% 0 50% 0);
-    transform: translate(-1px, 1px);
+  15% {
+    text-shadow: -2px 0 #00ff00, 2px 0 #ff00ff;
+    transform: translateX(-1px);
   }
-  40% {
-    clip-path: inset(75% 0 10% 0);
-    transform: translate(1px, -1px);
+  30% {
+    text-shadow: -4px 2px #00ff00, 4px -2px #ff00ff;
+    transform: translateX(1px) scaleX(0.99);
+  }
+  45% {
+    text-shadow: 2px -2px #ff00ff, -2px 2px #00ff00;
+    transform: translateX(-2px) scaleX(1.01);
   }
   60% {
-    clip-path: inset(10% 0 75% 0);
-    transform: translate(-2px, 2px);
+    text-shadow: 3px 0 #00ff00, -3px 0 #ff00ff;
+    transform: translateX(2px);
   }
-  80% {
-    clip-path: inset(50% 0 25% 0);
-    transform: translate(2px, -2px);
+  75% {
+    text-shadow: -1px 1px #ff00ff, 1px -1px #00ff00;
+    transform: translateX(-1px) scaleX(1);
   }
-  100% {
-    clip-path: inset(25% 0 50% 0);
-    transform: translate(-1px, 1px);
-  }
-}
-
-@keyframes jrv-glitch-anim-2 {
-  0% {
-    clip-path: inset(25% 0 50% 0);
-    transform: translate(2px, -2px);
-  }
-  20% {
-    clip-path: inset(50% 0 25% 0);
-    transform: translate(1px, -1px);
-  }
-  40% {
-    clip-path: inset(10% 0 75% 0);
-    transform: translate(-1px, 1px);
-  }
-  60% {
-    clip-path: inset(75% 0 10% 0);
-    transform: translate(2px, -2px);
-  }
-  80% {
-    clip-path: inset(25% 0 50% 0);
-    transform: translate(-2px, 2px);
+  90% {
+    text-shadow: 1px 0 #00ff00, -1px 0 #ff00ff;
+    transform: translateX(1px);
   }
   100% {
-    clip-path: inset(50% 0 25% 0);
-    transform: translate(1px, -1px);
+    text-shadow: 0 0 0 rgba(0, 255, 0, 0);
+    transform: translateX(0);
   }
 }
 
