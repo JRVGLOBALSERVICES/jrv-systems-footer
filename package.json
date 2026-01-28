@@ -4,6 +4,13 @@
   "description": "Reusable JRV Systems footer components for all JRV sites",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "index.js",
+    "FooterSignature.jsx",
+    "footer.css",
+    "footer-signature.css",
+    "README.md"
+  ],
   "exports": {
     ".": "./index.js",
     "./signature": "./FooterSignature.jsx",
